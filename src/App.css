@@ -1,0 +1,62 @@
+main {
+  background-color: #4a0269;
+}
+
+h1 {
+  font-size: 4rem;
+  margin: 0;
+  text-decoration: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #6d039a;
+  padding: 1.75rem 2rem;
+  position: sticky;
+  top: 0;
+  box-shadow: black 3px 3px 5px;
+}
+header > a {
+  text-decoration: none;
+}
+nav {
+  display: flex;
+  align-items: center;
+}
+nav > a {
+  color: #fff;
+  font-weight: 600;
+  margin-right: 2rem;
+  text-decoration: none;
+  border-bottom: #fff 1px solid;
+  padding-bottom: 2px;
+}
+nav > a:hover {
+  border: none;
+}
+.text-white {
+  color: white;
+}
+
+.text-primary {
+  color: #4a0269;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
+  header,
+  nav {
+    flex-direction: column;
+    align-items: start;
+    gap: 1.25rem;
+  }
+}

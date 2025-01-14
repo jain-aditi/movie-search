@@ -1,0 +1,36 @@
+.fav-list {
+  /* max-width: 100%; */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.favourites {
+  padding: 4rem 1rem;
+}
+.fav-header {
+  font-size: 3.5rem;
+  color: #fff;
+  margin: 0 0 2rem 0;
+}
+
+.empty-favs {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+@media screen and (max-width: 480px) {
+  .fav-list {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 10px;
+  }
+
+  .fav-header {
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem 0;
+  }
+  .favourites {
+    padding: 2rem 0.5rem;
+  }
+}
