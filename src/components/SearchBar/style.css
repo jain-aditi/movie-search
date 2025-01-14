@@ -1,10 +1,11 @@
 .relative {
   position: relative;
+  width: 300px;
 }
 .search-bar {
   padding: 0.75rem 2.25rem;
   border: none;
-  width: 300px;
+  width: 100%;
   border-radius: 0.5rem;
 }
 .search-bar:focus {
@@ -17,4 +18,10 @@
   height: 1.5rem;
   width: 1.5rem;
   top: 8px;
+}
+
+@media (max-width: 480px) {
+  .relative {
+    width: 100%;
+  }
 }
