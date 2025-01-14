@@ -3,8 +3,6 @@ import MovieCard from "../MovieCard";
 import "./style.css";
 
 const Favourites = ({ favourites, onToggleFavourite }) => {
-  console.log(favourites);
-
   return (
     <div className="favourites" id="favourites">
       <h2 className="fav-header">My Favourites</h2>
