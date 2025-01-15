@@ -21,7 +21,7 @@ const App = () => {
       setLoading(true);
       try {
         const promises = [];
-        for (let i = 1; i <= 10; i++) {
+        for (let i = 1; i <= 12; i++) {
           promises.push(axios.get(`${API_URL}${i}`));
         }
 
@@ -30,9 +30,10 @@ const App = () => {
           (response) => response?.data?.Search || []
         );
         setMovies(movieArr);
-        setLoading(false);
       } catch (error) {
         console.error("Error fetching movies:", error);
+      } finally {
+        setLoading(false);
       }
     };
 

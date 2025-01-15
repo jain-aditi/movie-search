@@ -5,7 +5,7 @@ import { GrFormNext } from "react-icons/gr";
 import "./style.css";
 
 const MovieList = ({ movies, onToggleFavourite, favourites }) => {
-  const ITEMS_PER_PAGE = 10;
+  const ITEMS_PER_PAGE = 12;
   const [currentPage, setCurrentPage] = useState(1);
 
   const queryParameters = useMemo(
@@ -20,7 +20,7 @@ const MovieList = ({ movies, onToggleFavourite, favourites }) => {
 
   useEffect(() => {
     handlePageChange(1);
-  }, [movies]);
+  }, []);
 
   const handlePageChange = (newPage) => {
     setCurrentPage(newPage);
@@ -82,22 +82,32 @@ const MovieList = ({ movies, onToggleFavourite, favourites }) => {
   };
 
   return (
-    <div>
-      <div className="movie-list">
-        {paginatedMovies?.map((movie) => (
-          <MovieCard
-            key={movie.Title}
-            movie={movie}
-            isFavourite={favourites.some((fav) => fav.imdbID === movie.imdbID)}
-            onToggleFavourite={onToggleFavourite}
-          />
-        ))}
-      </div>
-      {totalPages > 1 && (
-        <div className="pagination-container">{renderPaginationButtons()}</div>
+    <div className="movies">
+      {paginatedMovies?.length ? (
+        <>
+          <div className="movie-list">
+            {paginatedMovies?.map((movie) => (
+              <MovieCard
+                key={movie.Title}
+                movie={movie}
+                isFavourite={favourites.some(
+                  (fav) => fav.imdbID === movie.imdbID
+                )}
+                onToggleFavourite={onToggleFavourite}
+              />
+            ))}
+          </div>
+          {totalPages > 1 && (
+            <div className="pagination-container">
+              {renderPaginationButtons()}
+            </div>
+          )}
+        </>
+      ) : (
+        <p className="empty-favs">No results found...</p>
       )}
     </div>
   );
 };
 
-export default MovieList;
+export default React.memo(MovieList);
